@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Card } from '../components/molecules'
 import { Layout } from '../layouts'
 
-interface IAllContent {
+interface IAllContentData {
   allMarkdownRemark: {
     edges: {
       node: {
@@ -40,18 +40,23 @@ const AllContentDocument = graphql`
 `
 
 function IndexPage() {
-  const { allMarkdownRemark } = useStaticQuery<IAllContent>(AllContentDocument)
+  const { allMarkdownRemark } = useStaticQuery<IAllContentData>(
+    AllContentDocument
+  )
   return (
     <Layout>
-      {allMarkdownRemark.edges.map(({ node }) => (
-        <Card
-          title={node.frontmatter.title}
-          published={node.frontmatter.published}
-          tags={node.frontmatter.tags}
-          excert={node.excerpt}
-          slug={`${node.frontmatter.layout}s/${node.frontmatter.slug}`}
-        />
-      ))}
+      {allMarkdownRemark
+        ? allMarkdownRemark.edges.map(({ node }) => (
+            <Card
+              title={node.frontmatter.title}
+              published={node.frontmatter.published}
+              tags={node.frontmatter.tags}
+              excert={node.excerpt}
+              slug={`${node.frontmatter.layout}s/${node.frontmatter.slug}`}
+            />
+          ))
+        : "Unfortunately I haven't made any content here yet"}
+      {}
     </Layout>
   )
 }

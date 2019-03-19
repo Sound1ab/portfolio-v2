@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Card } from '../components/molecules'
 import { Layout } from '../layouts'
 
-interface IProjects {
+interface IProjectData {
   allMarkdownRemark: {
     edges: {
       node: {
@@ -41,7 +41,7 @@ const AllContentDocument = graphql`
 `
 
 function Projects() {
-  const { allMarkdownRemark } = useStaticQuery<IProjects>(AllContentDocument)
+  const { allMarkdownRemark } = useStaticQuery<IProjectData>(AllContentDocument)
   return (
     <Layout>
       {allMarkdownRemark

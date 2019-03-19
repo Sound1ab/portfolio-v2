@@ -25,7 +25,7 @@ const Style = styled.div`
   }
 `
 
-interface IComponentData {
+interface ISidebarData {
   site: {
     siteMetadata: {
       title: string
@@ -44,33 +44,37 @@ interface ISidebar {
   className?: string
 }
 
-export function Sidebar({ className = 'Sidebar' }: ISidebar) {
-  const { site, placeholderImage } = useStaticQuery<IComponentData>(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            author
-          }
-        }
-        placeholderImage: file(relativePath: { eq: "avatar.png" }) {
-          childImageSharp {
-            fixed(width: 125, height: 125) {
-              ...GatsbyImageSharpFixed
-            }
-          }
+const SidebarDocument = graphql`
+  query {
+    site {
+      siteMetadata {
+        author
+      }
+    }
+    placeholderImage: file(relativePath: { eq: "avatar.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
         }
       }
-    `
+    }
+  }
+`
+
+export function Sidebar({ className = 'Sidebar' }: ISidebar) {
+  const { site, placeholderImage } = useStaticQuery<ISidebarData>(
+    SidebarDocument
   )
 
   return (
     <Style className={className}>
       <StickyContainer className="sidebar-sticky">
-        <Img
-          className="sidebar-avatar"
-          fixed={placeholderImage.childImageSharp.fixed}
-        />
+        <Link to="/">
+          <Img
+            className="sidebar-avatar"
+            fixed={placeholderImage.childImageSharp.fixed}
+          />
+        </Link>
         <Heading type="h3" marginBottom>
           {site.siteMetadata.author}
         </Heading>
@@ -79,10 +83,10 @@ export function Sidebar({ className = 'Sidebar' }: ISidebar) {
           passionate about building scalable and robust applications.
         </p>
         <nav className="sidebar-nav">
-          <Link to="projects">Projects</Link>
-          <Link to="projects">Articles</Link>
-          <Link to="projects">About</Link>
-          <Link to="projects">Contact</Link>
+          <Link to="/projects">Projects</Link>
+          <Link to="/articles">Articles</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
       </StickyContainer>
     </Style>
