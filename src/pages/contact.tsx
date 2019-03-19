@@ -70,24 +70,28 @@ function About() {
         {({ isSubmitting }) => (
           <Form>
             <FormInput
+              icon="user"
               name={FormValue.FIRST_NAME}
               placeholder={`${FormValue.FIRST_NAME.charAt(
                 0
               ).toUpperCase()}${FormValue.FIRST_NAME.slice(1)}`}
             />
             <FormInput
+              icon="user"
               name={FormValue.SECOND_NAME}
               placeholder={`${FormValue.SECOND_NAME.charAt(
                 0
               ).toUpperCase()}${FormValue.SECOND_NAME.slice(1)}`}
             />
             <FormInput
+              icon="envelope"
               name={FormValue.EMAIL}
               placeholder={`${FormValue.EMAIL.charAt(
                 0
               ).toUpperCase()}${FormValue.EMAIL.slice(1)}`}
             />
             <FormTextArea
+              icon="comment"
               name={FormValue.MESSAGE}
               placeholder={`${FormValue.MESSAGE.charAt(
                 0

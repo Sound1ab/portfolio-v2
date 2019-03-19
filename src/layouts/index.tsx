@@ -3,6 +3,14 @@ import { ThemeProvider, GlobalStyle } from '../components/utility'
 import { Sidebar } from '../components/molecules'
 import { Container } from '../components/atoms'
 import { styled } from '../theme'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faEnvelope,
+  faUser,
+  faComment,
+} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faEnvelope, faUser, faComment)
 
 const Style = styled.div`
   display: flex;

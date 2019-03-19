@@ -6,6 +6,12 @@ import Img, { FixedObject } from 'gatsby-image'
 
 const Style = styled.div`
   position: relative;
+  border-right: 2px solid grey;
+
+  @media (max-width: 768px) {
+    border-right: none;
+    border-bottom: 2px solid grey;
+  }
 
   .sidebar-sticky {
     display: flex;

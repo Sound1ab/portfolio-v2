@@ -17,8 +17,8 @@ export const theme = {
   spacing: {
     xxl: rhythm(10),
     xl: rhythm(7),
-    l: rhythm(4),
-    m: rhythm(2),
+    l: rhythm(3),
+    m: rhythm(1.5),
     s: rhythm(1),
     xs: rhythm(0.5),
     xxs: rhythm(0.25),
