@@ -1,8 +1,6 @@
 import Typography from 'typography'
-import grandViewTheme from 'typography-theme-github'
+import moraga from 'typography-theme-moraga'
 
-const typography = new Typography(grandViewTheme)
-
-console.log(grandViewTheme)
+const typography = new Typography(moraga)
 
 export default typography
