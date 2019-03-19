@@ -6,9 +6,9 @@ const Style = styled.div`
   position: relative;
 
   .form-textarea {
-    padding: 20px;
+    padding: ${({ theme }) => theme.spacing.xs};
     border: 0;
-    color: ${({ theme }) => theme.colors.input.text};
+    color: ${({ theme }) => theme.colors.input.primaryText};
     background-color: ${({ theme }) => theme.colors.input.background};
     margin-bottom: ${({ theme }) => theme.spacing.s};
     width: 100%;
@@ -19,7 +19,7 @@ const Style = styled.div`
     position: absolute;
     left: 0;
     bottom: ${({ theme }) => theme.spacing.xs};
-    color: ${({ theme }) => theme.colors.input.error};
+    color: ${({ theme }) => theme.colors.input.errorText};
     font-size: 12px;
   }
 `

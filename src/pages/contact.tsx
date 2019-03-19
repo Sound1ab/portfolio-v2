@@ -1,23 +1,31 @@
 import React from 'react'
-import { Heading, FormInput, FormTextArea } from '../components/atoms'
+import {
+  Heading,
+  FormInput,
+  FormTextArea,
+  FormSubmit,
+} from '../components/atoms'
 import { Layout } from '../layouts'
-import { Formik, FormikActions, FormikProps, Form } from 'formik'
+import { Formik, FormikActions, Form } from 'formik'
 
 enum FormValue {
-  NAME = 'name',
+  FIRST_NAME = 'firstName',
+  SECOND_NAME = 'secondName',
   EMAIL = 'email',
   MESSAGE = 'message',
 }
 
 interface MyFormValues {
-  [FormValue.NAME]: string
+  [FormValue.FIRST_NAME]: string
+  [FormValue.SECOND_NAME]: string
   [FormValue.EMAIL]: string
   [FormValue.MESSAGE]: string
 }
 
 function About() {
   const initialValues = {
-    [FormValue.NAME]: '',
+    [FormValue.FIRST_NAME]: '',
+    [FormValue.SECOND_NAME]: '',
     [FormValue.EMAIL]: '',
     [FormValue.MESSAGE]: '',
   }
@@ -33,8 +41,10 @@ function About() {
 
   function validate(values: MyFormValues) {
     let errors: { [key: string]: string } = {}
-    if (!values[FormValue.NAME]) {
-      errors[FormValue.NAME] = 'Required'
+    if (!values[FormValue.FIRST_NAME]) {
+      errors[FormValue.FIRST_NAME] = 'Required'
+    } else if (!values[FormValue.SECOND_NAME]) {
+      errors[FormValue.SECOND_NAME] = 'Required'
     } else if (!values[FormValue.EMAIL]) {
       errors[FormValue.EMAIL] = 'Required'
     } else if (!values[FormValue.MESSAGE]) {
@@ -56,13 +66,20 @@ function About() {
         initialValues={initialValues}
         validate={validate}
         onSubmit={onSubmit}
-        render={(formikBag: FormikProps<MyFormValues>) => (
+      >
+        {({ isSubmitting }) => (
           <Form>
             <FormInput
-              name={FormValue.NAME}
-              placeholder={`${FormValue.NAME.charAt(
+              name={FormValue.FIRST_NAME}
+              placeholder={`${FormValue.FIRST_NAME.charAt(
                 0
-              ).toUpperCase()}${FormValue.NAME.slice(1)}`}
+              ).toUpperCase()}${FormValue.FIRST_NAME.slice(1)}`}
+            />
+            <FormInput
+              name={FormValue.SECOND_NAME}
+              placeholder={`${FormValue.SECOND_NAME.charAt(
+                0
+              ).toUpperCase()}${FormValue.SECOND_NAME.slice(1)}`}
             />
             <FormInput
               name={FormValue.EMAIL}
@@ -76,9 +93,10 @@ function About() {
                 0
               ).toUpperCase()}${FormValue.MESSAGE.slice(1)}`}
             />
+            <FormSubmit isSubmitting={isSubmitting} />
           </Form>
         )}
-      />
+      </Formik>
     </Layout>
   )
 }

@@ -4,13 +4,14 @@ const rhythm = Typography.rhythm
 
 export const theme = {
   colors: {
-    brand: '#71ff90',
+    brand: '#27348A',
     accent: '#73ffcd',
     error: '#ff6790',
     input: {
       background: '#eeedf8',
-      text: '#7a727c',
-      error: '#ff6790',
+      primaryText: '#7a727c',
+      secondaryText: '#fff1ff',
+      errorText: '#ff6790',
     },
   },
   spacing: {
