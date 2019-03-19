@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const { id, frontmatter } = node
 
     createPage({
-      path: frontmatter.slug,
+      path: `${frontmatter.layout}s/${frontmatter.slug}`,
       component: path.resolve(`./src/templates/${frontmatter.layout || 'page'}.tsx`),
       context: {
         id

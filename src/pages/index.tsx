@@ -1,6 +1,5 @@
 import React from 'react'
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import { Heading } from '../components/atoms'
+import { graphql, useStaticQuery } from 'gatsby'
 import { Card } from '../components/molecules'
 import { Layout } from '../layouts'
 
@@ -14,6 +13,7 @@ interface IAllContent {
           published: string
           tags: string
           slug: string
+          layout: string
         }
       }
     }[]
@@ -30,6 +30,8 @@ const AllContentDocument = graphql`
             title
             published
             tags
+            slug
+            layout
           }
         }
       }
@@ -47,7 +49,7 @@ function IndexPage() {
           published={node.frontmatter.published}
           tags={node.frontmatter.tags}
           excert={node.excerpt}
-          slug={node.frontmatter.slug}
+          slug={`${node.frontmatter.layout}s/${node.frontmatter.slug}`}
         />
       ))}
     </Layout>
