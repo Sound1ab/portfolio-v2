@@ -1,15 +1,14 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "phillip-parker-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Portfolio of Phillip Parker, London",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Phillip Parker <info@phillipparker.io>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-brands-svg-icons": "^5.8.0",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@types/react-helmet": "^5.0.8",
     "babel-plugin-styled-components": "^1.10.0",
     "formik": "^1.5.1",
     "gatsby": "^2.1.31",
@@ -27,9 +26,7 @@
     "gatsby-source-filesystem": "^2.0.24",
     "gatsby-transformer-remark": "^2.3.5",
     "gatsby-transformer-sharp": "^2.1.17",
-    "normalize.css": "^8.0.1",
     "prismjs": "^1.15.0",
-    "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
@@ -39,14 +36,13 @@
     "typography-theme-moraga": "^0.16.19"
   },
   "devDependencies": {
+    "@types/react-helmet": "^5.0.8",
     "@types/styled-components": "^4.1.12",
     "@types/typography": "^0.16.2",
-    "prettier": "^1.16.4",
-    "typography-theme-github": "^0.16.19",
-    "typography-theme-grand-view": "^0.16.19"
+    "prettier": "^1.16.4"
   },
   "keywords": [
-    "gatsby"
+    "Phillip Parker, Portfolio"
   ],
   "license": "MIT",
   "scripts": {
@@ -60,8 +56,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
