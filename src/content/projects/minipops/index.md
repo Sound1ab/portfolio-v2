@@ -1,7 +1,7 @@
 ---
 title: "Minipops"
-published: "May 15, 2019"
-sort: "2019-05-15"
+published: "May 15, 2018"
+sort: "2018-05-15"
 description: "Get updates on vinyl items selling on eBay and bag yourself a bargain."
 keywords: "vue, javascript, vuex, pwa, minipops, vinyl, ebay, notification"
 tags: "project, code"
@@ -12,6 +12,8 @@ layout: "article"
 # Minipops
 
 ![](./minipops-discover.png)
+
+[Take a look.](https://www.minipops.co.uk/)
 
 Get updates on vinyl items selling on eBay and bag yourself a bargain.
 
