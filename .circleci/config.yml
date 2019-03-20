@@ -57,10 +57,13 @@ jobs:
       # dist folder that needs to be deployed
       - restore_cache:
           key: v1-public-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+      - run:
+          name: Install pip
+          command: sudo apt-get install python-dev python-pip
       # Install AWS cli
       - run:
           name: Install aws cli
-          command: sudo apt-get install awscli
+          command: sudo pip install awscli
       # Set the signature version for the S3 auth
       - run:
           name: Setting Signature Version 4 for S3 Request Authentication
