@@ -60,7 +60,7 @@ jobs:
       # Install AWS cli
       - run:
           name: Install aws cli
-          command: sudo apt-get -y -qq install awscli
+          command: sudo pip install awscli
       # Set the signature version for the S3 auth
       - run:
           name: Setting Signature Version 4 for S3 Request Authentication
@@ -78,6 +78,7 @@ jobs:
           name: Invalidate Cloudfron cache
           command: |
             aws configure set preview.cloudfront true  # Turn on cloudfront in AWS CLI
+            aws configure set preview.create-invalidation true
             aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /\*
 
 workflows:
