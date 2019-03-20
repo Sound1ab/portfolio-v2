@@ -9,7 +9,7 @@ slug: "bamboo"
 layout: "article"
 ---
 
-# BamBoo
+# Ossia
 
 ![](./ossia.jpg)
 
