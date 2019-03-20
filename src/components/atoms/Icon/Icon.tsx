@@ -20,13 +20,18 @@ const Style = styled.a`
 
 interface IIcon {
   link?: string
-  icon: 'github' | 'soundcloud'
+  prefix?: 'fab'
+  icon: 'github' | 'soundcloud' | 'pen-square'
 }
 
-export function Icon({ link = '#', icon }: IIcon) {
+export function Icon({ link = '#', icon, prefix }: IIcon) {
   return (
     <Style href={link} rel="noopener" target="_blank">
-      <FontAwesomeIcon icon={['fab', icon]} size="xs" className="icon-svg" />
+      <FontAwesomeIcon
+        icon={[prefix as any, icon]}
+        size="xs"
+        className="icon-svg"
+      />
     </Style>
   )
 }

@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/cv`,
   siteMetadata: {
     title: `Phillip Parker's Portfolio`,
     description: `A full-stack (TypeScript) developer based in London, UK who is passionate about building scalable and robust applications.`,

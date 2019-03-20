@@ -3,6 +3,7 @@ import { styled } from '../../../theme'
 import { StickyContainer, Heading, Icon } from '../../atoms'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img, { FixedObject } from 'gatsby-image'
+import { withPrefix } from 'gatsby'
 
 const Style = styled.div`
   position: relative;
@@ -98,8 +99,17 @@ export function Sidebar({ className = 'Sidebar' }: ISidebar) {
           <Link to="/articles">Articles</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
-          <Icon icon="github" link="https://www.github.com/sound1ab" />
-          <Icon icon="soundcloud" link="https://soundcloud.com/pointhope" />
+          <Icon
+            icon="github"
+            link="https://www.github.com/sound1ab"
+            prefix="fab"
+          />
+          <Icon
+            icon="soundcloud"
+            link="https://soundcloud.com/pointhope"
+            prefix="fab"
+          />
+          <Icon icon="pen-square" link={withPrefix('/cv/index.pdf')} />
         </nav>
         <span className="sidebar-copyright">
           © All rights reserved | {new Date().getFullYear()}
