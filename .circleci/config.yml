@@ -33,9 +33,9 @@ jobs:
           name: Building
           command: |
             if [ "${CIRCLE_BRANCH}" == "staging" ]; then
-                npm build
+                npm run build
             elif [ "${CIRCLE_BRANCH}" == "master" ]; then
-                npm build
+                npm run build
             fi
       # Cache the dist folder for the deploy job
       - save_cache:
