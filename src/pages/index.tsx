@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Card } from '../components/molecules'
+import { CardList } from '../components/organism'
 import { Layout } from '../layouts'
 
 interface IAllContentData {
@@ -45,18 +45,7 @@ function IndexPage() {
   )
   return (
     <Layout>
-      {allMarkdownRemark
-        ? allMarkdownRemark.edges.map(({ node }) => (
-            <Card
-              title={node.frontmatter.title}
-              published={node.frontmatter.published}
-              tags={node.frontmatter.tags}
-              excert={node.excerpt}
-              slug={`${node.frontmatter.layout}s/${node.frontmatter.slug}`}
-            />
-          ))
-        : "Unfortunately I haven't made any content here yet"}
-      {}
+      <CardList edges={allMarkdownRemark && allMarkdownRemark.edges} />
     </Layout>
   )
 }
