@@ -52,7 +52,8 @@ module.exports = {
             options: {
               maxWidth: 1000,
               quality: 90,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
+              tracedSVG: true,
             }
           },
           {
