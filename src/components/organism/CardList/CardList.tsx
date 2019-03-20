@@ -1,5 +1,14 @@
 import React from 'react'
 import { Card } from '../../molecules'
+import { styled } from '../../../theme'
+
+const Style = styled.div`
+  position: relative;
+
+  * + * {
+    margin-top: ${({ theme }) => theme.spacing.s};
+  }
+`
 
 interface ICardList {
   edges?: {
@@ -18,7 +27,7 @@ interface ICardList {
 
 export function CardList({ edges }: ICardList) {
   return (
-    <>
+    <Style>
       {edges
         ? edges.map(({ node }) => (
             <Card
@@ -31,6 +40,6 @@ export function CardList({ edges }: ICardList) {
             />
           ))
         : "Unfortunately I haven't made any content here yet"}
-    </>
+    </Style>
   )
 }

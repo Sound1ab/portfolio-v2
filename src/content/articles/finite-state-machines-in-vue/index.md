@@ -3,7 +3,7 @@ title: "Finite State Machines in Vue"
 published: "March 21, 2018"
 description: "Finite State Machines (FSM) aren’t much more than a list of possible states and actions that allow states to transition from one to another. Luckily, this encompasses most of what a UI is."
 keywords: "finite, state, machine, finite state machine, vue, xstate, javascript, vuex, statecharts"
-tags: "code"
+tags: "article, code"
 slug: "finite-state-machines-in-vue"
 layout: "article"
 ---

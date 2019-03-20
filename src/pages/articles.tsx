@@ -22,7 +22,9 @@ interface IArticleData {
 
 const AllContentDocument = graphql`
   query Articles {
-    allMarkdownRemark(filter: { frontmatter: { layout: { eq: "article" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { tags: { regex: "/article/" } } }
+    ) {
       edges {
         node {
           id

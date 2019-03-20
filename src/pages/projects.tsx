@@ -22,7 +22,9 @@ interface IProjectData {
 
 const AllContentDocument = graphql`
   query Projects {
-    allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { tags: { regex: "/project/" } } }
+    ) {
       edges {
         node {
           id
