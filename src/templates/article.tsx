@@ -1,35 +1,45 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { Card } from '../components/molecules'
 import { Layout } from '../layouts'
+import { SEO } from '../components/utility'
 
-interface PageTemplateProps {
+interface IArticleTemplate {
   data: {
     markdownRemark: {
       html: string
-      excerpt: string
       frontmatter: {
         title: string
+        description: string
+        keywords: string
       }
     }
   }
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
-  <Layout>
-    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-  </Layout>
-)
+function ArticleTemplate({ data }: IArticleTemplate) {
+  const { html, frontmatter } = data.markdownRemark
+  return (
+    <Layout>
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.description}
+        keywords={frontmatter.keywords}
+      />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </Layout>
+  )
+}
 
-export default PageTemplate
+export default ArticleTemplate
 
 export const query = graphql`
-  query PageTemplateQuery($id: String!) {
+  query ArticleTemplateQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
-      excerpt
       frontmatter {
         title
+        description
+        keywords
       }
     }
   }
