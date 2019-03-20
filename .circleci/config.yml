@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/portfolio-v2
     docker:
-      - image: circleci/node:8.12-browsers-legacy
+      - image: circleci/node:latest
     steps:
       # Checkout the code from the branch into the working_directory
       - checkout
@@ -47,7 +47,7 @@ jobs:
   deploy:
     working_directory: ~/portfolio-v2
     docker:
-      - image: circleci/node:6.10-browsers
+      - image: circleci/node:latest
     steps:
       # Log the current branch
       - run:
@@ -60,7 +60,7 @@ jobs:
       # Install AWS cli
       - run:
           name: Install aws cli
-          command: sudo pip install awscli
+          command: sudo apt-get install awscli
       # Set the signature version for the S3 auth
       - run:
           name: Setting Signature Version 4 for S3 Request Authentication
