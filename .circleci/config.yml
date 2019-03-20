@@ -74,6 +74,11 @@ jobs:
             elif [ "${CIRCLE_BRANCH}" == "master" ]; then
                 aws --region us-east-1 s3 sync public s3://phillipparker.io/ --delete
             fi
+      - run:
+          name: Invalidate Cloudfron cache
+          command: |
+            aws configure set preview.cloudfront true  # Turn on cloudfront in AWS CLI
+            aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /\*
 
 workflows:
   version: 2
