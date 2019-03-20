@@ -5,7 +5,7 @@ const rhythm = Typography.rhythm
 export const theme = {
   colors: {
     brand: '#27348A',
-    accent: '#73ffcd',
+    accent: '#c7ca6e',
     error: '#ff6790',
     input: {
       background: '#eeedf8',
