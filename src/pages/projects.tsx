@@ -24,6 +24,7 @@ const AllContentDocument = graphql`
   query Projects {
     allMarkdownRemark(
       filter: { frontmatter: { tags: { regex: "/project/" } } }
+      sort: { fields: frontmatter___sort, order: DESC }
     ) {
       edges {
         node {
