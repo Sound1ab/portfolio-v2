@@ -70,9 +70,9 @@ jobs:
           name: Deploy to S3
           command: |
             if [ "${CIRCLE_BRANCH}" == "staging" ]; then
-                aws --region eu-west-2 s3 sync public s3://phillipparker.io-staging/ --region us-west-1 --delete
+                aws --region us-east-1 s3 sync public s3://phillipparker.io-staging/ --delete
             elif [ "${CIRCLE_BRANCH}" == "master" ]; then
-                aws --region eu-west-2 s3 sync public s3://phillipparker.io/ --region us-west-1 --delete
+                aws --region us-east-1 s3 sync public s3://phillipparker.io/ --delete
             fi
 
 workflows:
