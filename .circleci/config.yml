@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/portfolio-v2
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:8.12-browsers-legacy
     steps:
       # Checkout the code from the branch into the working_directory
       - checkout
@@ -47,7 +47,7 @@ jobs:
   deploy:
     working_directory: ~/portfolio-v2
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:8.12-browsers-legacy
     steps:
       # Log the current branch
       - run:
