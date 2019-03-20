@@ -1,16 +1,16 @@
 import React from 'react'
 import { styled } from '../../../theme'
-import { StickyContainer, Heading } from '../../atoms'
+import { StickyContainer, Heading, Icon } from '../../atoms'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img, { FixedObject } from 'gatsby-image'
 
 const Style = styled.div`
   position: relative;
-  border-right: 2px solid grey;
+  border-right: 1px solid ${({ theme }) => theme.colors.text.secondary};
 
   @media (max-width: 768px) {
     border-right: none;
-    border-bottom: 2px solid grey;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.text.secondary};
   }
 
   .sidebar-sticky {
@@ -28,6 +28,11 @@ const Style = styled.div`
   .sidebar-nav > a {
     display: block;
     margin-bottom: ${({ theme }) => theme.spacing.xs};
+  }
+
+  .sidebar-copyright {
+    font-size: 14px;
+    color: ${({ theme }) => theme.colors.text.secondary};
   }
 `
 
@@ -60,7 +65,7 @@ const SidebarDocument = graphql`
     placeholderImage: file(relativePath: { eq: "avatar.png" }) {
       childImageSharp {
         fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_tracedSVG
         }
       }
     }
@@ -93,7 +98,12 @@ export function Sidebar({ className = 'Sidebar' }: ISidebar) {
           <Link to="/articles">Articles</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
+          <Icon icon="github" link="https://www.github.com/sound1ab" />
+          <Icon icon="soundcloud" link="https://soundcloud.com/pointhope" />
         </nav>
+        <span className="sidebar-copyright">
+          © All rights reserved | {new Date().getFullYear()}
+        </span>
       </StickyContainer>
     </Style>
   )

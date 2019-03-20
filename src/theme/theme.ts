@@ -13,6 +13,14 @@ export const theme = {
       secondaryText: '#fff1ff',
       errorText: '#ff6790',
     },
+    link: {
+      visited: '#000000',
+      unvisited: '#000000',
+    },
+    text: {
+      primary: 'hsla(0,0%,0%,0.7)',
+      secondary: '#858585',
+    },
   },
   spacing: {
     xxl: rhythm(10),

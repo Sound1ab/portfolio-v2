@@ -9,8 +9,9 @@ import {
   faUser,
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faSoundcloud } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faEnvelope, faUser, faComment)
+library.add(faGithub as any, faSoundcloud as any, faEnvelope, faUser, faComment)
 
 const Style = styled.div`
   display: flex;

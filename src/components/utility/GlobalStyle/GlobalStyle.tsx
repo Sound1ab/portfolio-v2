@@ -66,7 +66,27 @@ export const GlobalStyle = createGlobalStyle`
   
   
   h1,h2,h3,h4,h5,h6 {
-    color: ${({ theme }: { theme: any }) => theme.colors.brand}
+    color: ${({ theme }: { theme: any }) => theme.colors.brand};
+  }
+  
+  /* unvisited link */
+  nav a:link {
+    color: ${({ theme }) => theme.colors.link.unvisited};
+  }
+  
+  /* visited link */
+  nav a:visited {
+    color: ${({ theme }) => theme.colors.link.visited};
+  }
+  
+  /* mouse over link */
+  nav a:hover {
+    color: ${({ theme }) => theme.colors.brand};
+  }
+  
+  /* selected link */
+  nav a:active {
+    color: ${({ theme }) => theme.colors.brand};
   }
   
   

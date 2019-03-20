@@ -2,7 +2,6 @@ import React from 'react'
 import { styled } from '../../../theme'
 import { Field, FieldProps } from 'formik'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const Style = styled.div`
   position: relative;
