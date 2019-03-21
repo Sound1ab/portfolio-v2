@@ -9,10 +9,8 @@ slug: "pretty-good-key"
 layout: "article"
 ---
 
-# Pretty Good Key
-
 ![](./prettygoodkey.jpg)
 
-[Take a look](https://www.prettygoodkey.co.uk)
-
 Pretty Good Key is a simple password generator. The PWA takes a key and a salting passphrase to generate a unique password.
+
+[Take a look](https://www.prettygoodkey.co.uk)

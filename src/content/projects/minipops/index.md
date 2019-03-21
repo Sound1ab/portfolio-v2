@@ -9,11 +9,7 @@ slug: "minipops"
 layout: "article"
 ---
 
-# Minipops
-
 ![](./minipops-discover.png)
-
-[Take a look.](https://www.minipops.co.uk/)
 
 Get updates on vinyl items selling on eBay and bag yourself a bargain.
 
@@ -26,3 +22,5 @@ To aid discovery, Minipops utilises the Spotify API to show a list of artists re
 ![](./minipops-list.png)
 
 Each user is setup with their own personal account, managed using AWS Cognito. This allows each user to login from any device and manage their wantlist and personal account information.
+
+[Take a look.](https://www.minipops.co.uk/)

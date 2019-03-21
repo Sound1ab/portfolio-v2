@@ -9,10 +9,8 @@ slug: "dealer-locator"
 layout: "article"
 ---
 
-# Dealer Locator
-
 ![](./dealer-locator.png)
 
-[Take a look.](https://trucks.mercedes-benz.co.uk/dealer-locator/)
-
 PWA web app using Vue and the Google Maps API to provide location and direction information to Dealer outlets in the UK.
+
+[Take a look.](https://trucks.mercedes-benz.co.uk/dealer-locator/)

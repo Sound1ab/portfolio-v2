@@ -9,8 +9,6 @@ slug: "finite-state-machines-in-vue"
 layout: "article"
 ---
 
-# Finite State Machines in Vue
-
 Have you ever thought that there’s something missing with how we manage state? We’ve got flux implementations like Redux and Vuex. They solve the big issue of how to maintain state across multiple components and provide an easy API to update it. But state management or the workflow of how a state can update is so project specific that flux doesn’t help. It doesn’t give us a manageable way to keep on top of how our state changes over time and what that means for our app.
 
 When we start coding our app, we start from the bottom. Connecting a button click to a function, having the function call an API, updating a variable with the returned data and showing that new data in the UI. This workflow is stored in the developers head. Come back to the code in a month and that workflow is gone. We need a way to document this workflow.

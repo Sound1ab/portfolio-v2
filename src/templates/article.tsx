@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { Layout } from '../layouts'
 import { SEO } from '../components/utility'
+import { Heading } from '../components/atoms'
 
 interface IArticleTemplate {
   data: {
@@ -25,6 +26,7 @@ function ArticleTemplate({ data }: IArticleTemplate) {
         description={frontmatter.description}
         keywords={frontmatter.keywords}
       />
+      <Heading type="h1">{frontmatter.title}</Heading>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )

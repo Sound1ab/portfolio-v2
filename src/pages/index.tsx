@@ -22,7 +22,7 @@ interface IAllContentData {
 
 const AllContentDocument = graphql`
   query AllContent {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___sort, order: DESC }) {
       edges {
         node {
           excerpt
