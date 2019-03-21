@@ -13,6 +13,6 @@ layout: "article"
 
 Minipops was a progressive web app that lets you build a list of your most sought-after vinyl and attach eBay watchers to them to easily receive updates on items that are about to sell.
 
-Minipops native takes this a step further. Introduced as a native iOS app, Minipops native not only allows you to build a list of your favourite vinyl but no allows users to find good deals on vinyl by comparing prices across different buying platforms.
+Minipops native takes this a step further. Introduced as a native iOS app, Minipops native not only allows you to build a list of your favourite vinyl but now allows users to find good deals on vinyl by comparing prices across different buying platforms.
 
 The app is built with React Native to target iOS and uses AWS Appsync on the backend - a GraphQL powered API.

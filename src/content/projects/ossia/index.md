@@ -5,7 +5,7 @@ sort: "2019-03-20"
 description: "Explore new artists and create your own remixes of their songs by combining different vocals and backing tracks with a simple swipe."
 keywords: "react, javascript, typescript, gatsby, bamboo"
 tags: "project, code"
-slug: "bamboo"
+slug: "ossia"
 layout: "article"
 ---
 
