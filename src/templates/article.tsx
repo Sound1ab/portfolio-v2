@@ -26,7 +26,9 @@ function ArticleTemplate({ data }: IArticleTemplate) {
         description={frontmatter.description}
         keywords={frontmatter.keywords}
       />
-      <Heading type="h1">{frontmatter.title}</Heading>
+      <Heading type="h1" marginBottom>
+        {frontmatter.title}
+      </Heading>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
