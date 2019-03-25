@@ -1,9 +1,14 @@
-import React, { createContext, useLayoutEffect, useState } from 'react'
+import React, { createContext, useState } from 'react'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import { theme } from '../../../theme/theme'
 import { COLOR_MODE } from '../../../enums'
 
-const DEFAULT_COLOR_MODE = COLOR_MODE.LIGHT
+function loadColorMode() {
+  const loadedColorMode = localStorage.getItem(
+    LOCAL_STORAGE.KEY
+  ) as COLOR_MODE | null
+  return loadedColorMode ? loadedColorMode : COLOR_MODE.LIGHT
+}
 
 enum LOCAL_STORAGE {
   KEY = 'phillip_parker_portfolio::color_mode',
@@ -19,21 +24,12 @@ interface ThemeProvider {
 }
 
 export function ThemeProvider({ children }: ThemeProvider) {
-  const [colorMode, setColorMode] = useState(DEFAULT_COLOR_MODE)
+  const [colorMode, setColorMode] = useState(loadColorMode())
+
   const selectedTheme = {
     ...theme,
     colors: theme.colors[colorMode],
   }
-
-  useLayoutEffect(() => {
-    const loadedColorMode = localStorage.getItem(
-      LOCAL_STORAGE.KEY
-    ) as COLOR_MODE | null
-    if (!loadedColorMode) {
-      return
-    }
-    setColorMode(loadedColorMode)
-  }, [])
 
   function handleSetColorMode(newColorMode: COLOR_MODE) {
     localStorage.setItem(LOCAL_STORAGE.KEY, newColorMode)
