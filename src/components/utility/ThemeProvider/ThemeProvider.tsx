@@ -3,7 +3,7 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import { theme } from '../../../theme/theme'
 import { COLOR_MODE } from '../../../enums'
 
-const DEFAULT_COLOR_MODE = COLOR_MODE.DARK
+const DEFAULT_COLOR_MODE = COLOR_MODE.LIGHT
 
 enum LOCAL_STORAGE {
   KEY = 'phillip_parker_portfolio::color_mode',
