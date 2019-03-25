@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider, GlobalStyle } from '../components/utility'
-import { Sidebar } from '../components/molecules'
+import { Sidebar, ColorModeButton } from '../components/molecules'
 import { Container } from '../components/atoms'
 import { styled } from '../theme'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -9,6 +9,7 @@ import {
   faUser,
   faComment,
   faPenSquare,
+  faMoon,
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faSoundcloud } from '@fortawesome/free-brands-svg-icons'
 
@@ -17,6 +18,7 @@ library.add(
   faSoundcloud as any,
   faEnvelope,
   faUser,
+  faMoon,
   faComment,
   faPenSquare
 )
@@ -52,16 +54,17 @@ const Style = styled.div`
   }
 `
 
-export const Layout = ({ children }: { children: any }) => (
-  <ThemeProvider>
-    <>
+export function Layout({ children }: { children: any }) {
+  return (
+    <ThemeProvider>
       <GlobalStyle />
       <Style>
         <Container className="layout-page">
           <Sidebar className="layout-sidebar" />
           <main className="layout-main">{children}</main>
         </Container>
+        <ColorModeButton />
       </Style>
-    </>
-  </ThemeProvider>
-)
+    </ThemeProvider>
+  )
+}

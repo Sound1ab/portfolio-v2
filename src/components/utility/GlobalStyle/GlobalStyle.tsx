@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   
   html {
     box-sizing: border-box;
+    background-color: ${({ theme }) => theme.colors.background}
   }
   
   *,
@@ -87,6 +88,10 @@ export const GlobalStyle = createGlobalStyle`
   /* selected link */
   nav a:active {
     color: ${({ theme }) => theme.colors.brand};
+  }
+  
+  p {
+    color: ${({ theme }: { theme: any }) => theme.colors.text.primary};
   }
   
   

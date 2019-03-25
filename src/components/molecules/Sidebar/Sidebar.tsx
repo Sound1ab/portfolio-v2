@@ -103,11 +103,13 @@ export function Sidebar({ className = 'Sidebar' }: ISidebar) {
             icon="github"
             link="https://www.github.com/sound1ab"
             prefix="fab"
+            marginRight
           />
           <Icon
             icon="soundcloud"
             link="https://soundcloud.com/pointhope"
             prefix="fab"
+            marginRight
           />
           <Icon icon="pen-square" link={withPrefix('/cv/index.pdf')} />
         </nav>

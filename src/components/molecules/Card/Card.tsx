@@ -5,8 +5,6 @@ import { Link } from 'gatsby'
 
 const Style = styled.div`
   position: relative;
-  background-color: white;
-
   .card-tags {
     color: ${({ theme }) => theme.colors.accent};
   }
