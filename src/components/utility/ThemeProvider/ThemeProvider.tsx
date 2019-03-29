@@ -26,22 +26,24 @@ interface ThemeProvider {
 
 function useColorModeFromLocalStorage(): [
   COLOR_MODE,
-  Dispatch<SetStateAction<COLOR_MODE>>,
+  (newColorMode: COLOR_MODE) => void,
   boolean
 ] {
-  const [colorMode, setColorMode] = useState(DEFAULT_COLOR_MODE)
+  const [colorMode, setColorModeState] = useState(DEFAULT_COLOR_MODE)
   const [loading, setLoading] = useState(true)
 
+  function setColorMode(newColorMode: COLOR_MODE) {
+    localStorage.setItem(LOCAL_STORAGE.KEY, newColorMode)
+    setColorModeState(newColorMode)
+  }
+
   useLayoutEffect(() => {
-    const loadedColorMode = localStorage.getItem(
-      LOCAL_STORAGE.KEY
-    ) as COLOR_MODE | null
-    if (!loadedColorMode) {
-      return
-    }
-    setColorMode(loadedColorMode)
+    let loadedColorMode =
+      (localStorage.getItem(LOCAL_STORAGE.KEY) as COLOR_MODE | null) ||
+      DEFAULT_COLOR_MODE
+    setColorModeState(loadedColorMode)
     setLoading(false)
-  }, [colorMode])
+  }, [])
 
   return [colorMode, setColorMode, loading]
 }
@@ -54,7 +56,6 @@ export function ThemeProvider({ children }: ThemeProvider) {
   }
 
   function handleSetColorMode(newColorMode: COLOR_MODE) {
-    localStorage.setItem(LOCAL_STORAGE.KEY, newColorMode)
     setColorMode(newColorMode)
   }
 
